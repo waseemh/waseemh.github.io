@@ -1,10 +1,5 @@
----
-layout: post
-title: "An overview of 'Truth', Google's new Java testing framework"
-comments: true
-permalink: overview-truth-google-new-testing-framework
-intro: "Although still considered a very new project, it was interesting to see what does 'Truth', a new testing framework by Google, pioneer in the world of test automation."
----
+#An overview of 'Truth', Google's new Java testing framework"
+
 Although still considered a very new project, it was interesting to see what does [Truth](https://google.github.io/truth/), a new testing framework by Google, pioneer in the world of test automation.
 
 'Truth' is a Java testing framework with an aim to make test assertions and failures more readable.
