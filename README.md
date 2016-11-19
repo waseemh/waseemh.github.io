@@ -16,6 +16,6 @@ Binoculars is an open source tool for automating visual regression tests for web
 
 Java API for LXC (Linux Containers)
 
-##Papers
+##Posts and Articles
 
 ###[An overview of 'Truth', Google's new Java testing framework](posts/2015-06-11-overview-truth-google-new-java-testing-framework.md)
