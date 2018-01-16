@@ -1,100 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<title>Waseem Hamshawi</title>
+---
+layout: default
+---
 
-<meta name="description" content="Waseem Hamshawi">
-<meta name="keywords" content="Waseem Hamshawi">
-<meta name="resource-type" content="document">
-<meta name="distribution" content="global">
-<meta name="Generator" content="makeinfo">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link href="#Top" rel="start" title="Top">
-<link href="#Concepts-Index" rel="index" title="Concepts Index">
-<link href="#SEC_Contents" rel="contents" title="Table of Contents">
-<link href="dir.html#Top" rel="up" title="(dir)">
-<style type="text/css">
-<!--
-a.summary-letter {text-decoration: none}
-blockquote.smallquotation {font-size: smaller}
-div.display {margin-left: 3.2em}
-div.example {margin-left: 3.2em}
-div.indentedblock {margin-left: 3.2em}
-div.lisp {margin-left: 3.2em}
-div.smalldisplay {margin-left: 3.2em}
-div.smallexample {margin-left: 3.2em}
-div.smallindentedblock {margin-left: 3.2em; font-size: smaller}
-div.smalllisp {margin-left: 3.2em}
-kbd {font-style:oblique}
-pre.display {font-family: inherit}
-pre.format {font-family: inherit}
-pre.menu-comment {font-family: serif}
-pre.menu-preformatted {font-family: serif}
-pre.smalldisplay {font-family: inherit; font-size: smaller}
-pre.smallexample {font-size: smaller}
-pre.smallformat {font-family: inherit; font-size: smaller}
-pre.smalllisp {font-size: smaller}
-span.nocodebreak {white-space:nowrap}
-span.nolinebreak {white-space:nowrap}
-span.roman {font-family:serif; font-weight:normal}
-span.sansserif {font-family:sans-serif; font-weight:normal}
-ul.no-bullet {list-style: none}
--->
-</style>
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
 
+      <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
 
-</head>
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
 
-<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<h1 class="settitle" align="center">Waseem Hamshawi</h1>
-
-<a name="SEC_Contents"></a>
-<h2 class="contents-heading">Table of Contents</h2>
-
-<div class="contents">
-  
-<h3 class="section">1.1 Fat-free Accounting</h3>
-
-<p>Ledger is an accounting tool with the moxie to exist.  It provides no
-bells or whistles, and returns the user to the days before user
-interfaces were even a twinkling in their father&rsquo;s CRT.
-</p>
-<p>What it does offer is a double-entry accounting journal with all the
-flexibility and muscle of its modern day cousins, without any of the
-fat.  Think of it as the Bran Muffin of accounting tools.
-</p>
-<p>To use it, you need to start keeping a journal.  This is the basis of
-all accounting, and if you haven&rsquo;t started yet, now is the time to
-learn.  The little booklet that comes with your checkbook is a journal,
-so we&rsquo;ll describe double-entry accounting in terms of that.
-</p>
-
-<p>A checkbook journal records debits (subtractions, or withdrawals) and
-credits (additions, or deposits) with reference to a single account:
-the checking account.  Where the money comes from, and where it goes
-to, are described in the payee field, where you write the person or
-company&rsquo;s name.  The ultimate aim of keeping a checkbook journal is to
-know how much money is available to spend.  That&rsquo;s really the aim of
-all journals.
-</p>
-<a name="index-postings"></a>
-<p>What computers add is the ability to walk through these postings,
-and tell you things about your spending habits; to let you devise
-budgets and get control over your spending; to squirrel away money
-into virtual savings account without having to physically move money
-around; etc.  As you keep your journal, you are recording information
-about your life and habits, and sometimes that information can start
-telling you things you aren&rsquo;t aware of.  Such is the aim of all good
-accounting tools.
-</p>
-<p>The next step up from a checkbook journal, is a journal that keeps
-track of all your accounts, not just checking.  In such a journal, you
-record not only who gets paid&mdash;in the case of a debit&mdash;but where the
-money came from.  In a checkbook journal, it&rsquo;s assumed that all the
-money comes from your checking account.  But in a general journal, you
-write postings in two lines: the source account and target account.
-<em>There must always be a debit from at least one account for every
-credit made to another account</em>. 
-  
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
 </div>
-</body>
