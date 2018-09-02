@@ -13,14 +13,15 @@
 h1#title {margin-bottom: 1px;}
 span#title {margin-bottom: 3px;}
 .contents { float: left; width: 70%; }
-.nav { margin-left: 30%; }
+.nav { margin-left: 30%; padding-left: 10px; }
 </style>
 </head>
 
 <body>
+  <div class="header">
 <h1 id="title">{{site.name}}</h1>
 <span id="title">{{site.description}}</span>
-
+  </div>
 <div class="contents">
   
 {{ content }}
