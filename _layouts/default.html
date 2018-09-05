@@ -1,37 +1,38 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
 <head>
-<title>{{site.name}}</title>
-
-<meta name="description" content="Waseem Hamshawi">
-<meta name="keywords" content="Waseem Hamshawi">
-<meta name="resource-type" content="document">
-<meta name="distribution" content="global">
-<meta name="Generator" content="makeinfo">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<style>
-h1#title {margin-bottom: 1px;}
-span#title {margin-bottom: 3px;}
-.contents { float: left; width: 70%; }
-.nav { margin-left: 30%; padding-left: 10px; }
-</style>
+    <title>Responsive Layout</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body>
-  <div class="header">
-<h1 id="title">{{site.name}}</h1>
-<span id="title">{{site.description}}</span>
-  </div>
-<div class="contents">
-  
-{{ content }}
-  
-</div>
-  
-  <div class="nav">
-  
-This is navigation
-  
+<div id="container">
+    <!-- header -->
+    <header id="header">
+        <h1 id="title">Responsive Layout</h1>
+    </header>
+    <!-- Navigation -->
+    <nav id="menu" class="clearfix">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav> 
+    <!-- Main Content area -->
+    <section id="content">
+        <h2>Built with CSS3 and HTML5</h2>
+        {{ content }}
+    </section>
+    <!-- Sidebar -->
+    <aside  id="sidebar">
+        <h3>This is the Sidebar</h3>
+        <!-- Sidebar content -->
+    </aside>
+    <!-- Footer -->
+    <footer id="footer" class="clearfix">
+        Copyright &copy Andor Nagy 2015
+    </footer>
 </div>
 </body>
 </html>
