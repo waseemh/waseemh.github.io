@@ -6,10 +6,13 @@ tags: selenium, webdriver
 permalink: event-handling-selenium-webdriver
 ---
 Hooking into events in an automated testing environment can be helpful for debugging, logging and investigation purposes. Moreover, when it comes to executing automated web tests, these aspects play even more important role in maintaining tests and analyzing results.
+
 If you are developing web tests based on Selenium WebDriver framework, I highly recommend using its built-in event mechanism. Adapting such mechanism in your tests infrastructure can be benefcial in the long run, in terms of maintenance and analysis.
 
 Selenium Web Driver 2.0 framework allows to track different events during test execution such as website navigation, elements interactions and thrown exceptions.
+
 As a test developer, I can listen to these events during test execution and provide my own implementation for handling the events once they are triggered by WebDriver.
+
 For example, I can use the On Exception event to take a screenshot of browser instance once exception is thrown by WebDriver. Or maybe use the After Change Value event to track how many times each element have been modified during the tests. Practical imagination has no limits.
 
 In this brief tutorial we are going to introduce the event handling mechanism in WebDriver framework, show how to apply it in your tests and suggest several useful implementations.
