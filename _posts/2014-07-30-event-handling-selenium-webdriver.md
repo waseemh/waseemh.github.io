@@ -18,8 +18,8 @@ In this brief tutorial we are going to introduce the event handling mechanism in
 
 The events mechanism in WebDriver is composed of two major objects:
 
-    EventFiringWebDriver - A wrapper of the normal WebDriver API but adds the support of event triggering.
-    WebDriverEventListener - An interface with pre-defined events that EventFiringWebDriver instance will trigger.
+- EventFiringWebDriver: A wrapper of the normal WebDriver API but adds the support of event triggering.
+- WebDriverEventListener: An interface with pre-defined events that EventFiringWebDriver instance will trigger.
 
 ![Diagram of objects relation](/images/eventdriver.png)
 
@@ -30,6 +30,7 @@ I'm not going to go over all supported events by WebDriver, since they are self-
 Our first step would be to initialize the EventFiringWebDriver based on the WebDriver instance we already use. In addition, we should create and register an event listener for the EventFiringWebDriver instance.
 
 An example using FirefoxDriver:
+
 {% highlight java %} 
 //initalize FireFox webdriver instance
 WebDriver driver = new FirefoxDriver();
@@ -49,6 +50,7 @@ eventDriver.register(listener);
 After our event listener has been registered in driver, we need to provide implementation for the triggered events. WebDriver API provides two approaches to implement event listeners:
 
 1) Implement WebDriverEventListener interface: This interface includes all the supported events by WebDriver. As a listener, you must provide an implementation of this interface's methods. One major drawback of this approach is that you have to implement all methods in interface. You may find yourself providing empty implementation for irrelevant events in your tests.
+
 {% highlight java %} 
 public class DefaultWebDriverEventListener implements WebDriverEventListener {
 
@@ -128,6 +130,7 @@ public class DefaultWebDriverEventListener implements WebDriverEventListener {
 {% endhighlight %}
 
 2) Extend AbstractWebDriverEventListener: This abstract class basically implements the WebDriverEventListener interface with empty implementation. Its purpose is to let you override only the events you actually need to listen to.
+
 {% highlight java %} 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -159,6 +162,7 @@ Both approaches lead to same result and it's up to you to choose, based on desig
 ## Multiple Event Listeners
 
 As we discussed before, each event-firing WebDriver may include multiple event listeners at the same time. When an event is fired, all registered listeners will be notified about it. For example:
+
 {% highlight java %} 
 WebDriver driver = new FirefoxDriver();
 
@@ -185,6 +189,7 @@ Above example will produce the following output:
 If you may need to disable the event listeners on your tests, you can remove the listener from the event-firing WebDriver instance by un-registering it. You may find such option very useful when you want to perform WebDriver operations silently.
 WebDriver API provides the following method for un-registering event listeners: public EventFiringWebDriver unregister(WebDriverEventListener eventListener) .
 In below example, we initially register two event listeners and un-register first event listener before second navigation operation.
+
 {% highlight java %} 
 WebDriver driver = new FirefoxDriver();
 
