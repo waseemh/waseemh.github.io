@@ -2,15 +2,9 @@
 layout: default
 ---
 
-<div class="posts">
   {% for post in site.posts %}
-    <article class="post">
-
-      <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-
-      <div class="entry">
+      <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+       <p>
         {{ post.excerpt }}
-      </div>
-    </article>
+      </p>
   {% endfor %}
-</div>
