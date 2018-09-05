@@ -31,7 +31,16 @@ Our first step would be to initialize the EventFiringWebDriver based on the WebD
 
 An example using FirefoxDriver:
 
-{% gist 7b38fd0ef11b74259a98 %}
+{% highlight java %} 
+//initalize FireFox webdriver instance
+WebDriver driver = new FirefoxDriver();
+//initalize event-firing driver using Firefox webdriver instance.
+EventFiringWebDriver eventDriver = new EventFiringWebDriver(driver); 
+//initalize new webdriver event listener
+WebDriverEventListener listener = new DefaultWebDriverEventListener();
+//register event listener to even-firing webdriver instance
+eventDriver.register(listener);
+{% endhighlight %}
  
 ## Creating Event Listeners
  
@@ -39,7 +48,83 @@ After our event listener has been registered in driver, we need to provide imple
 
 1) Implement WebDriverEventListener interface: This interface includes all the supported events by WebDriver. As a listener, you must provide an implementation of this interface's methods. One major drawback of this approach is that you have to implement all methods in interface. You may find yourself providing empty implementation for irrelevant events in your tests.
 
-{% gist ad163ba3ebe1a8deaf71 %}
+{% highlight java %} 
+public class DefaultWebDriverEventListener implements WebDriverEventListener {
+
+	public void beforeNavigateTo(String url, WebDriver driver) {
+		System.out.println("Driver will navigate to:" + url);
+	}
+
+	public void afterNavigateTo(String url, WebDriver driver) {
+		System.out.println("Driver navigated to:" + url);
+	}
+
+	public void beforeNavigateBack(WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void afterNavigateBack(WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void beforeNavigateForward(WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void afterNavigateForward(WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void beforeFindBy(By by, WebElement element, WebDriver driver) {
+		System.out.println("Driver will find element using locator:" + by);
+	}
+
+	public void afterFindBy(By by, WebElement element, WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void beforeClickOn(WebElement element, WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void afterClickOn(WebElement element, WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void beforeChangeValueOf(WebElement element, WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void afterChangeValueOf(WebElement element, WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void beforeScript(String script, WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void afterScript(String script, WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onException(Throwable throwable, WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
+{% endhighlight %}
 
 2) Extend AbstractWebDriverEventListener: This abstract class basically implements the WebDriverEventListener interface with empty implementation. Its purpose is to let you override only the events you actually need to listen to.
 
