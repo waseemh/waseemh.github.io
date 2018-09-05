@@ -34,10 +34,13 @@ An example using FirefoxDriver:
 {% highlight java %} 
 //initalize FireFox webdriver instance
 WebDriver driver = new FirefoxDriver();
+
 //initalize event-firing driver using Firefox webdriver instance.
 EventFiringWebDriver eventDriver = new EventFiringWebDriver(driver); 
+
 //initalize new webdriver event listener
 WebDriverEventListener listener = new DefaultWebDriverEventListener();
+
 //register event listener to even-firing webdriver instance
 eventDriver.register(listener);
 {% endhighlight %}
@@ -128,7 +131,31 @@ public class DefaultWebDriverEventListener implements WebDriverEventListener {
 
 2) Extend AbstractWebDriverEventListener: This abstract class basically implements the WebDriverEventListener interface with empty implementation. Its purpose is to let you override only the events you actually need to listen to.
 
-{% gist c9b2d84a43adaed954eb %}
+{% highlight java %} 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
+
+public class DefaultWebDriverEventListener2 extends AbstractWebDriverEventListener{
+	
+	@Override
+	public void beforeNavigateTo(String url, WebDriver driver) {
+		System.out.println("Driver will navigate to:" + url);
+	}
+
+	@Override
+	public void afterNavigateTo(String url, WebDriver driver) {
+		System.out.println("Driver navigated to:" + url);
+	}
+	
+	@Override
+	public void beforeFindBy(By by, WebElement element, WebDriver driver) {
+		System.out.println("Driver will find element using locator:" + by);
+	}
+
+}
+{% endhighlight %}
 
 Both approaches lead to same result and it's up to you to choose, based on design consideration.
  
@@ -136,7 +163,18 @@ Both approaches lead to same result and it's up to you to choose, based on desig
 
 As we discussed before, each event-firing WebDriver may include multiple event listeners at the same time. When an event is fired, all registered listeners will be notified about it. For example:
 
-{% gist b5ae65a1b1f89d6ab4d8 %}
+{% highlight java %} 
+WebDriver driver = new FirefoxDriver();
+
+EventFiringWebDriver eventDriver = new EventFiringWebDriver(driver);
+
+eventDriver.register(new DefaultWebDriverEventListener());
+eventDriver.register(new DefaultWebDriverEventListener2());
+
+eventDriver.get("http://www.google.com");
+
+eventDriver.quit();
+{% endhighlight %}
 
 Above example will produce the following output:
 
@@ -152,7 +190,25 @@ If you may need to disable the event listeners on your tests, you can remove the
 WebDriver API provides the following method for un-registering event listeners: public EventFiringWebDriver unregister(WebDriverEventListener eventListener) .
 In below example, we initially register two event listeners and un-register first event listener before second navigation operation.
 
-{% gist 6c64e502eea3b5feb348 %}
+{% highlight java %} 
+WebDriver driver = new FirefoxDriver();
+
+EventFiringWebDriver eventDriver = new EventFiringWebDriver(driver);
+
+WebDriverEventListener listener1 = new DefaultWebDriverEventListener();
+WebDriverEventListener listener2 = new DefaultWebDriverEventListener2();
+
+eventDriver.register(listener1);
+eventDriver.register(listener2);
+
+eventDriver.get("http://www.google.com");
+
+eventDriver.unregister(listener1);
+
+eventDriver.get("http://www.yahoo.com");
+
+eventDriver.quit();
+{% endhighlight %}
 
 Above example will produce the following output (notice that Listener 1 wasn't notified of second navigation operation):
 
