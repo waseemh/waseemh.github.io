@@ -11,7 +11,7 @@ It is not a fully-featured testing framework, but it can be integrated with any 
 
 Truth comes with two major features: __Fluent Assertions API__ and __Failure Strategies__
 
-## Fluent Assertions API
+### Fluent Assertions API
 
 Truth's assertion API allows you to write test assertions in a fluent style.
 
@@ -55,7 +55,7 @@ ASSERT.that(0).isLessThan(1); //Truth
 
 But when compared with other advanced assertion Java open source libraries such as [AssertJ](http://joel-costigliola.github.io/assertj/) or [FEST](https://code.google.com/p/fest/), Truth's fluent API doesn't provide any significant enhancements.
 
-## Failure Strategies
+### Failure Strategies
 
 Truth has expanded test assertion beyond its traditional definition. An assertion in Truth is a __'test verb'__ which asserts on a __'subject'__ (a subject is the object under test, i.e: a collection, an Integer, a User object).
 Other test verbs provided by Truth are __'Assumption'__ and __'Expectation'__. 
@@ -81,7 +81,7 @@ EXPECT.that("apple").contains("c");
 EXPECT.that("apple").contains("f");
 {% endhighlight %}
 
-## Customizable Failure Messages
+### Customizable Failure Messages
 
 If an assertion error message isn't clear enough or too general, you can override it using withFailureMessage(message). Method invocation should be appended to the assertion with an appropriate error message. For example, if you want to assert that a list is empty but still display a specific message in case of error:
 
@@ -133,7 +133,7 @@ Use custom verb and subject in a test:
 }
 {% endhighlight %}
 
-## Summary
+### Summary
 
 Truth has a solid foundation given its highly extensible design and abstract definitions of an assertion (verb, subject, propositions, failure strategy).
 But other open source testing frameworks provide similar fluent assertion APIs, so Truth doesn't bring any added value in this area.
