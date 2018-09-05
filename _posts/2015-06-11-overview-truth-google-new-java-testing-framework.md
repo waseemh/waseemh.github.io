@@ -90,7 +90,7 @@ List<User> userList = userRepository.getUsersBelowAge(age);
 ASSERT.withFailureMessage("Repository should not contain any registered users with age below " + age).that(userList).isEmpty();
 {% endhighlight %}
 
-## Extensible Assertions
+### Extensible Assertions
 
 Truth is a very extensible framework as it provides an abstraction of test assertion.
 Assertions are very modular in Truth -  you can define your own domain-specific assertion API by implementing custom test verbs, subjects and failure strategies. 
