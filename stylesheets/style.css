@@ -12,7 +12,7 @@ body { margin: 0; }
 
 header { padding-bottom: 0.5em; }
 
-header h1 { padding-bottom: 0.5em; }
+header h1 { margin-bottom: 0.5em; }
 
 .nav {
   list-style: none;
