@@ -18,7 +18,7 @@ __Note:__ Since most [BDD frameworks](http://java.dzone.com/articles/brief-compa
 
 ![People talking BDD?](/assets/bdd-discuss.jpeg)
 
-## Don't tie stories to technical details
+### Don't tie stories to technical details
 Stories should not get into technical details such as technologies, algorithms, programming languages and architectures used in software.
 
 For example: in web-based stories, you should definitely not use CSS selectors or HTML tags in steps. In stories with database operations, you should not explicitly describe the SQL queries or tables involved.
@@ -76,7 +76,7 @@ When the number of stories increases over time, there is a need to manage all th
 
 Most BDD frameworks can filter stories or scenarios based on meta parameters, allowing you to skip irrelevant scenarios in current context.
 
-## Don't overuse or misuse GivenStories
+### Don't overuse or misuse GivenStories
 GivenStories are reusable stories (more like a set of steps) used as prerequisites for more specific stories. Steps defined in GivenStories are called before their associated story or scenario is. 
 
 GivenStories can be useful when you have complex scenarios which include a set of precondition steps. Such steps can be isolated into a new story, and then can be invoked from other stories or scenarios using the GivenStories keyword. It greatly improves the maintainability of stories and empowers the reuse of common precondition steps (DRY).
@@ -106,7 +106,7 @@ Moreover, many BDD frameworks don't support GivenStories in story syntax (Cucumb
 
 __Note:__ GivenStories should not be used as a setup for each scenario in story. You should use [Backgrounds](http://docs.behat.org/en/latest/guides/1.gherkin.html#backgrounds) for this purpose.
 
-## Use "And"s as steps
+### Use "And"s as steps
 Avoid declaring multiple "And"s which belong to the same step. Instead, split them into several steps and use them to compose the requested scenario.
 For example, let's break down this scenario:
 
