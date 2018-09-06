@@ -16,8 +16,6 @@ Below are some general tips, concepts and personal insights which I would like t
 
 __Note:__ Since most [BDD frameworks](http://java.dzone.com/articles/brief-comparison-bdd) today support [Gherkin](http://docs.behat.org/en/latest/guides/1.gherkin.html) syntax (Given, When, Then) to express stories, we'll be adapting it too in this article. Though, many sections are also applicable for other story syntax.
 
-![People talking BDD?](/assets/bdd-discuss.jpeg)
-
 ### Don't tie stories to technical details
 Stories should not get into technical details such as technologies, algorithms, programming languages and architectures used in software.
 
