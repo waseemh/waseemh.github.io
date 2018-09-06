@@ -12,7 +12,8 @@ Selenium Webdriver 2.0 library comes with a set of utilities for applying differ
 
 We generally use [WebDriverWait](http://google.com) and [ExpectedCondition](http://google.com) objects for applying busy-wait-polling machnism when locating elements via WebDriver object. The polling behavior can be customized via different parameters such as wait timeout, interval between polls and which exceptions to ignore during polling. It also provides [ExpectedConditions](http://google.com) - a helper static class which includes many ready-made ExpectedCondition implementations commonly used in WebDriver tests. 
 
-However, I had several scenarios where I wanted to apply an ExpectedCondition on a WebElement object, not on a WebDriver object. For example, finding nested elements of a WebElement object such as table rows. Such elements might be loaded dynamicaly, thus using table.findElements(rowsXpath) won't be reliable enough.
+However, I had several scenarios where I wanted to apply an ExpectedCondition on a WebElement object, not on a WebDriver object. 
+For example: Finding nested elements of a WebElement object, such as table rows. Such elements might be loaded dynamicaly, thus using ```table.findElements(rowsXpath)``` won't be reliable enough.
 
 WebElement interface extends [SearchContext](http://google.com) interface, so it seemed abvious that library will support WebElement waits. But current implementation doesn't provide such support.
 
