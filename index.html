@@ -2,8 +2,6 @@
 layout: default
 ---
       <h2>Papers</h2>
-      <ul>
   {% for post in site.posts %}
-      <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+      <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
   {% endfor %}
-      </ul>
