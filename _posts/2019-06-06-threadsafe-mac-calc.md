@@ -9,12 +9,16 @@ In this short paper I would like to present a thread-safety issue when using MAC
 
 ### MAC and HMAC overview
 
-MAC is a widely used mechanism for enhancing API security by signing request messages, to verify their integrity and authenticity by the receiver. Messages are signed using a secret key that is shared between the requester and receiver. As opposed to traditional API authentications with tokens, the secret key is never transmitted over the wire in each request. Instead, it is used to sign the request message. 
+MAC is a widely used mechanism for enhancing API security by signing request messages, to verify their integrity and authenticity by the receiver. 
+
+Messages are signed using a secret key that is shared between the requester and receiver. As opposed to traditional API authentications with tokens, the secret key is never transmitted over the wire in each request. Instead, it is used to sign the request message. 
+
 HMAC (Keyed-Hash Message Authentication Code) is a specific type of MAC where secret key is used along with a cryptographically secure hash function (typically SHA-256) to generate a hash for signing the message.
 
 ### MAC in Java
 
 In Java, Mac class (javax.crypto.Mac) can create a message authentication code (MAC) from binary data and a secret key. Following snippet demonstrates this: 
+
 {% highlight java %} 
 //create MAC instance
 Mac mac = Mac.getInstance("HmacSHA256");
