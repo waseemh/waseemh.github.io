@@ -1,7 +1,11 @@
 ---
 layout: default
 ---
-      <h2>Papers</h2>
-  {% for post in site.posts %}
-      <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-  {% endfor %}
+    <div>
+      <h2>Documentation Projects</h2>
+      <ul>
+      {% for post in site.posts %}
+	<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+      </ul>
+    </div>
