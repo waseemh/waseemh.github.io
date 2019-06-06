@@ -2,10 +2,15 @@
 layout: default
 ---
     <div>
-      <h2>Documentation Projects</h2>
+      <h2>Technical Writings</h2>
       <ul>
       {% for post in site.posts %}
 	<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
       {% endfor %}
+      </ul>
+    </div>
+      <h2>Open-source Projects</h2>
+      <ul>
+        <li><a href="https://github.com/LivePersonInc/ephemerals">ephemerals</a>: A library for creating short-lived testing endpoints over container clusters.</li>
       </ul>
     </div>
