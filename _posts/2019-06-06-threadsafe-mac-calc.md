@@ -45,20 +45,23 @@ This behaviour should make sense because:
 Since javax.crypto.Mac is not thread-safe, new MAC instance should be used for each calculation. For example:
 
 {% highlight java %} 
-
+private Mac getMac() {
+ Mac mac = Mac.getInstance("HmacSHA256");
+ return mac;
+}
 {% endhighlight %}
 
 Moreover, since Mac object is cloneable, we can clone existing Mac object instead of initiating it for each calculation:
 
 {% highlight java %} 
-    /**
-     * javax.crypto.Mac is not thread-safe. MAC instance should be cloned for each calculation.
-     */
-    private Mac getMac() {
-        try {
-            return (Mac) macInstance.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException(e);
-        }
+/**
+ * javax.crypto.Mac is not thread-safe. MAC instance should be cloned for each calculation.
+ */
+private Mac getMac() {
+    try {
+        return (Mac) macInstance.clone();
+    } catch (CloneNotSupportedException e) {
+        throw new IllegalStateException(e);
     }
+}
 {% endhighlight %}
