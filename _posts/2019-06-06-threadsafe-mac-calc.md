@@ -38,8 +38,9 @@ byte[] macBytes = mac.doFinal(data);
 However, problems arise when we calculate MAC values in parallel. Let’s take for example an HTTP service that communicates with a 3rd-party API which requires MAC-based authentication. When serving multiple concurrent requests, our HTTP service fails to calculate the correct MAC value, thus authentication with 3rd-party API fails.
 
 This behaviour should make sense because:
-1- Mac object is stateful because it retains internal state about the encryption process 
-2- Most MAC algorithms are sequential (including HMAC). 
+
+- Mac object is stateful since it retains internal state about the encryption process 
+- Most MAC algorithms are sequential (including HMAC). 
 
 Since javax.crypto.Mac is not thread-safe, new MAC instance should be used for each calculation. For example:
 
