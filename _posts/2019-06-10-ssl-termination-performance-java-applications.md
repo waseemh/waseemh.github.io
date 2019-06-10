@@ -48,6 +48,7 @@ Since major suspect of high latency was SSL overhead, load was conducted with th
 <img src="/images/ssl_setup_1.jpeg" width="400" height="150" />
 
 2) **ELB SSL Termination**: In this setup, TLS was disabled in application service. Server certificates were installed on ELB and SSL termination was done by ELB.
+
 <img src="/images/ssl_setup_2.jpeg" width="400" height="150" />
 
 3) **Nginx Proxy SSL Termination**: In this setup, An Nginx reverse proxy server was installed in each application service machine, facing the ELB. Nginx was responsible for the SSL termination and forwarded traffic internally to application service (localhost:9090).
