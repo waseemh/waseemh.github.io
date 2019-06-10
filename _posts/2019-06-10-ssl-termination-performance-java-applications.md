@@ -45,17 +45,16 @@ Since major suspect of high latency was SSL overhead, load was conducted with th
 
 1) Application Service (Jetty) SSL Processing: In this setup, SSL termination was done by application's Jetty server
 
-￼![SSL Setup 1](/images/ssl_setup_1.jpeg)
-
+<img src="/images/ssl_setup_1.jpeg" width="400" height="150" />
 
 2) ELB SSL Termination: In this setup, TLS was disabled in application service. Server certificates were installed on ELB and SSL termination was done by ELB.
 
-￼￼![SSL Setup 2](/images/ssl_setup_2.jpeg)
+<img src="/images/ssl_setup_2.jpeg" width="400" height="150" />
 
 3) Nginx Proxy SSL Termination: In this setup, An Nginx reverse proxy server was installed in each application service machine, facing the ELB.
 Nginx was responsible for the SSL termination and forwarded traffic internally to application service (localhost:9090)
 
-￼￼￼![SSL Setup 3](/images/ssl_setup_3.jpeg)
+<img src="/images/ssl_setup_3.jpeg" width="400" height="150" />
 
 
 Summary:
