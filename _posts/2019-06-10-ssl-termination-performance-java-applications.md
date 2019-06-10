@@ -17,14 +17,14 @@ For our specific use-case, we will be evaluating an HTTP service implemented wit
 
 Below is a detailed description of performance setup
 
-### Application setup:
+### Application setup
 
 - Application service instances: 2
 - Processor: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
 - CPUs/instance: 4
 - Memory/instance: 16 GB
 
-### Application Configuration:
+### Application Configuration
 
 - Jetty thread pool (dynamic):
   - Max threads: 200
@@ -32,14 +32,14 @@ Below is a detailed description of performance setup
   - Queue capacity: 200
 - Graceful timeout: 60 seconds
 
-### Load Setup:
+### Load Setup
 
 - Load worker instances: 2
 - Processor: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
 - CPUs/instance: 4
 - Memory/instance: 16 GB
 
-### SSL Termination Setup:
+### SSL Termination Setup
 
 Since major suspect of high latency was SSL overhead, load was conducted with three different SSL termination setups:
 
@@ -47,7 +47,7 @@ Since major suspect of high latency was SSL overhead, load was conducted with th
 
 <img src="/images/ssl_setup_1.jpeg" width="400" height="150" />
 
-2) **ELB SSL Termination**: In this setup, TLS was disabled in application service. Server certificates were installed on ELB and SSL termination was done by ELB.
+2) **ELB SSL Termination**: In this setup, TLS was disabled in application service and moved to ELB end. [Elastic Load Balancing (ELB)](https://aws.amazon.com/elasticloadbalancing) is a load-balancing service by Amazon Web Services (AWS). Server certificates were installed on ELB and SSL termination was done by ELB. 
 
 <img src="/images/ssl_setup_2.jpeg" width="400" height="150" />
 
@@ -56,7 +56,7 @@ Since major suspect of high latency was SSL overhead, load was conducted with th
 <img src="/images/ssl_setup_3.jpeg" width="500" height="150" />
 
 
-Summary:
+### Summary
 
 - SSL termination on Amazon ELB produced best measurements, performance-wise.
 - With TLS enabled, CPU has reached nearly full usage at ~55 concurrent users only. Same CPU usage was reached with ELB after > 3500 concurrent users.
