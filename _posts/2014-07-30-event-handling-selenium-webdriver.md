@@ -33,7 +33,7 @@ Our first step would be to initialize the EventFiringWebDriver based on the WebD
 
 An example using FirefoxDriver:
 
-```
+```java
 //initalize FireFox webdriver instance
 WebDriver driver = new FirefoxDriver();
 
