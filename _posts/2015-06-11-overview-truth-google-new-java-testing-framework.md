@@ -18,7 +18,7 @@ Truth's assertion API allows you to write test assertions in a fluent style.
 The way assertions are composed allow other users to easily understand what the test is trying to assert.
 As a demonstration, let's compare good ol' JUnit assertions with Truth assertions:
 
-{% highlight java %}
+```java
 //Basic assertion:
 assertTrue(user.isConnected()); //JUnit 
 ASSERT.that(user.isConnected()).isTrue(); //Truth
@@ -30,17 +30,17 @@ ASSERT.that(collectionA).contains(q); //Truth
 //Map assertion:
 assertEquals("John Doe", userMap.get(id)); //JUnit 
 assertThat(userMap).containsEntry(id, "John Doe");//Truth
-{% endhighlight %}
+```
 
 Additionally, API provides advanced assertions which are not available in JUnit:
-{% highlight java %}
+```java
 //Composite propositions:
 ASSERT.that(collectionA).containsExactly(a, b, c, d).inOrder();
 
 //Iterative propositions
 Set<String> fruits = asList("Apple","Orange","Pomegranate");
 ASSERT.in(fruits).thatEach(STRING).endsWith("e");
-{% endhighlight %}
+```
 
 As you can see, the fluent API allows you to compose complex, yet readable propositions.
 
@@ -48,10 +48,10 @@ For a [full list](http://google.github.io/truth/usage/#built-in-propositions) of
 
 When compared with JUnit+Hamcrest assertions, it appears that Truth's fluent API is slightly better:
 
-{% highlight java %}
+```java
 Assert.assertThat(0, is(lessThan(1))); //JUnit+Hamcrest
 ASSERT.that(0).isLessThan(1); //Truth
-{% endhighlight %}
+```
 
 But when compared with other advanced assertion Java open source libraries such as [AssertJ](http://joel-costigliola.github.io/assertj/) or [FEST](https://code.google.com/p/fest/), Truth's fluent API doesn't provide any significant enhancements.
 
@@ -70,7 +70,7 @@ You can also implement your own failure strategy and use it in a test verb (more
 
 In order to switch to a different failure strategy (ASSERT is default), you can use ASSUME or EXPECT (as JUnit rule) when writing assertions. For example:
 
-{% highlight java %}
+```java
 //Assumption:
 ASSUME.that(4).isLessThan(10);
 
@@ -79,16 +79,16 @@ ASSUME.that(4).isLessThan(10);
 EXPECT.that("apple").contains("r");
 EXPECT.that("apple").contains("c");
 EXPECT.that("apple").contains("f");
-{% endhighlight %}
+```
 
 ### Customizable Failure Messages
 
 If an assertion error message isn't clear enough or too general, you can override it using withFailureMessage(message). Method invocation should be appended to the assertion with an appropriate error message. For example, if you want to assert that a list is empty but still display a specific message in case of error:
 
-{% highlight java %}
+```java
 List<User> userList = userRepository.getUsersBelowAge(age);
 ASSERT.withFailureMessage("Repository should not contain any registered users with age below " + age).that(userList).isEmpty();
-{% endhighlight %}
+```
 
 ### Extensible Assertions
 
@@ -97,7 +97,7 @@ Assertions are very modular in Truth -  you can define your own domain-specific 
 
 
 Creating a custom test verb by extending TestVerb class:
-{% highlight java %}
+```java
 public class MyVerb extends TestVerb {
     //create test verb as a static variable with 'throw assertion error' failure strategy
     public static final MyVerb MY_VERB_ASSERT = new MyVerb(Truth.THROW_ASSERTION_ERROR);
@@ -106,11 +106,11 @@ public class MyVerb extends TestVerb {
         super(failureStrategy);
     }
 }
-{% endhighlight %}
+```
 
 Creating a custom subject by extending Subject class:
 
-{% highlight java %}
+```java
 public class UserSubject extends Subject<UserSubject, User> {
 
     public UserSubject(FailureStrategy failureStrategy, User subject) {
@@ -123,15 +123,15 @@ public class UserSubject extends Subject<UserSubject, User> {
         }
     }
 }
-{% endhighlight %}
+```
 
 Use custom verb and subject in a test:
 
-{% highlight java %}
+```java
 @Test public void userTypeProposition() {
     MY_VERB_ASSERT.that(new User("John","Doe")).isEqualTo(new User("Jane","Doe"));
 }
-{% endhighlight %}
+```
 
 ### Summary
 
