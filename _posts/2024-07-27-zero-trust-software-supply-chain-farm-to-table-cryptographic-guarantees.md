@@ -54,7 +54,7 @@ According to SLSA, one of the key principals of supply chain security is to "Pre
 
 A software attestation is an authenticated statement (metadata) about a software artifact or collection of software artifacts.
 
-![Attestation model as defined by SLSA](https://waseemh.github.io/images/1_F1aqbfCXDauKlM5CMxk7cg.png)
+![Attestation model as defined by SLSA](https://waseemh.github.io/images/1_BBeAo1QKCYEnk8wCEC5SsQ.png)
 
 We can somehow think of signing as generating an attestation, but this attestation is essentially empty or provides minimal explicit information. All details regarding how the software was constructed are solely implied from the act of signing itself.
 
