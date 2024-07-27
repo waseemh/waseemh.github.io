@@ -21,6 +21,8 @@ In the context of software supply chain, we have similar threats where a softwar
 
 Since the security of a supply chain is defined by its weakest link, any compromise that occurs throughout the steps of a software pipeline might result in malicious artifacts delivered to the end-users. That's why it's important to secure the software supply chain end-to-end.
 
+![weakest link](https://waseemh.github.io/images/1_UbI221nWLUHPnbnt0Duxag.png)
+
 In this article we are going to tackle different software supply chain misconceptions, explain about supply chain integrity and finally present a cryptography-based solution for securing the end-to-end supply chain of a software product, using a research-backed framework called [in-toto](https://in-toto.io/) .
 
 ## Supply Chain Integrity
