@@ -284,10 +284,10 @@ Finally, we take the role of the functionary Carl by using his private key, and 
 ```in-toto-run --step-name package --use-dsse --materials demo-project/foo.py --products demo-project.tar.gz --signing-key carl -- tar --exclude ".git" -zcvf demo-project.tar.gz demo-project```
 
 For each `in-toto-run` command execution, in-toto performs the following:
-1) Hash the contents of the inputs and outputs.
-2) Add the hash together with other information to a metadata file.
-3) Sign the metadata with the functionary private key.
-4) Store everything to `step.[functionary_key_id].link`.
+1. Hash the contents of the inputs and outputs.
+2. Add the hash together with other information to a metadata file.
+3. Sign the metadata with the functionary private key.
+4. Store everything to `step.[functionary_key_id].link`.
 
 ### Verifying the final product
 Once the final product (the tarball file) is packaged, we can verify that it's tamper-free using the `in-toto-verify` command, by additionally providing the project owner's public key, the signed layout and the link metadata (.link files) inside the same directory where the final product resides:
@@ -335,5 +335,5 @@ Return value: 1
 A diagram depicting the steps executions and verification
 This example illustrated a basic scenario where in-toto safeguards various steps in the software supply chain. More complex software supply chains can be secured by applying the same method over a wider scope of steps.
 
-# Summary
+## Summary
 In this article, we uncovered many interesting approaches in software supply chain security, as we studied the threats
