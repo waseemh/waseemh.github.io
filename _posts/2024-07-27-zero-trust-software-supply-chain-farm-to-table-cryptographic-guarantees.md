@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/cbe29e39-134c-4f76-acec-0aaec06c9ba4)---
+---
 layout: post
 title: "Zero Trust Software Supply Chain using 'Farm-to-table' Cryptographic Guarantees"
 comments: false
