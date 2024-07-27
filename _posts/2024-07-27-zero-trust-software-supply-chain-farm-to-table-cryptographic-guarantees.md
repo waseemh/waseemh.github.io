@@ -26,7 +26,7 @@ In this article we are going to tackle different software supply chain misconcep
 ## Supply Chain Integrity
 The following diagram depicts the potential attack vectors in which the software pipeline can be compromised:
 
-![Software supply chain attacks](https://waseemh.github.io/images/1_obx2A8RZk0dQqjqlW7D3DA.jpg)
+![Software supply chain attacks](https://waseemh.github.io/images/1_obx2A8RZk0dQqjqlW7D3DA.png)
 
 As we can see, the software supply chain is exposed to many potential threats, across all of its stages. These threats are more focused on the compromise of the build and release pipeline.
 If attackers can control any step in the pipeline, they might be able to modify the output of the process for malicious purposes.
