@@ -8,12 +8,17 @@ permalink: zero-trust-software-supply-chain-farm-to-table-cryptographic-guarante
 
 In the 1980s, the manufacturing industry underwent workflow changes, and the software industry later embraced these practices with the Agile and DevOps methodologies. 
 
+![Software supply chain](https://waseemh.github.io/images/1_lCiGpYF8vXrvDmP3KNS0vA.jpg)
+
 The Toyota Production Systems (TPS), for example, has majorly inspired Agile practices in software.
 
 As modern software supply chains grow increasingly complex, their attack surface inherently increases too. Therefore, technology now continuously seeks to adapt manufacturing supply chain practices to improve software lifecycles.
 
 ## Farm to Table
 If we look at the food industry for example, a considerable effort is being put around "farm to table" food safety; Between the farm and the dinner table, numerous threats exist where disease-causing organisms and other food safety hazards can potentially infiltrate the food supply chain.
+
+![Farm to table](https://waseemh.github.io/images/1_F1aqbfCXDauKlM5CMxk7cg.png)
+
 In the context of software supply chain, we have similar threats where a software can be maliciously altered during the delivery pipeline.
 
 Since the security of a supply chain is defined by its weakest link, any compromise that occurs throughout the steps of a software pipeline might result in malicious artifacts delivered to the end-users. That's why it's important to secure the software supply chain end-to-end.
@@ -44,7 +49,7 @@ According to SLSA, one of the key principals of supply chain security is to "Pre
 
 A software attestation is an authenticated statement (metadata) about a software artifact or collection of software artifacts.
 
-Attestation model as defined by SLSA
+![Attestation model as defined by SLSA](https://waseemh.github.io/images/1_F1aqbfCXDauKlM5CMxk7cg.png)
 
 We can somehow think of signing as generating an attestation, but this attestation is essentially empty or provides minimal explicit information. All details regarding how the software was constructed are solely implied from the act of signing itself.
 
