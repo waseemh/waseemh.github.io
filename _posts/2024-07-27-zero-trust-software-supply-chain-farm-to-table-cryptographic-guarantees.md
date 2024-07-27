@@ -168,7 +168,11 @@ return SUCCESS
 
 ### in-toto in Action
 Let's continue with the SolarWinds attack example that we've presented earlier and try to simulate it (in the simplest manner of course) with in-toto. We will demonstrate how in-toto will detect that a malicious code was injected into the source code, just before it is built and packaged.
+
 We introduce a simple supply chain that includes the following steps:
+
+![Software supply chain](https://waseemh.github.io/images/1_kMZmj8TsmEtO9blbDGMkWA.png)
+
 - Bob works as a developer on the project .
 - Carl handles the software packaging. 
 - Bob usually modifies the source code of the project and delivers it to Carl for building and packaging it in the build server. 
@@ -322,7 +326,7 @@ As we previously described in the verification pseudo-code, the in-toto-verify c
 ### Compromising the Supply Chain
 Now let's simulate the attack: an attacker manages to hack into the build server and modifies source code after bumping the version file, just before the code is packaged:
 
-A diagram depicting the supply chain attack
+![A diagram depicting the supply chain attack](https://waseemh.github.io/images/1_eg_tSKbAJTzgpfhkHdE3Zg.png)
 
 We will simulate the attack by injecting a "malicious" code into a source code file:
 
@@ -344,7 +348,7 @@ This time, in-toto will detect that the product foo.py from Bob's update-version
 Return value: 1
 ```
 
-A diagram depicting the steps executions and verification
+![A diagram depicting the steps executions and verification](https://waseemh.github.io/images/1_p2Ebd971fJzNyR2fDHfFbg.png)
 This example illustrated a basic scenario where in-toto safeguards various steps in the software supply chain. More complex software supply chains can be secured by applying the same method over a wider scope of steps.
 
 ## Summary
