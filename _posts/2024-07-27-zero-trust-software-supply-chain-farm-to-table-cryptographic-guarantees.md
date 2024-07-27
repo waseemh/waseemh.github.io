@@ -1,4 +1,4 @@
----
+![image](https://github.com/user-attachments/assets/cbe29e39-134c-4f76-acec-0aaec06c9ba4)---
 layout: post
 title: "Zero Trust Software Supply Chain using 'Farm-to-table' Cryptographic Guarantees"
 comments: false
@@ -28,6 +28,8 @@ In this article we are going to tackle different software supply chain misconcep
 ## Supply Chain Integrity
 The following diagram depicts the potential attack vectors in which the software pipeline can be compromised:
 
+![Software supply chain attacks](https://waseemh.github.io/images/1_obx2A8RZk0dQqjqlW7D3DA.jpg)
+
 As we can see, the software supply chain is exposed to many potential threats, across all of its stages. These threats are more focused on the compromise of the build and release pipeline.
 If attackers can control any step in the pipeline, they might be able to modify the output of the process for malicious purposes.
 
@@ -41,6 +43,9 @@ Specifically, there was no coupling between the source code repository and the c
 The challenge is how can we determine which source code was used in the code signing? While we might assume it originated from the code repository, the code's signature does not offer any confirmation of this.
 
 In other words, if the signature is cryptographically valid, it confirms that the holder of the private key used that key to sign the artifact. Nothing less and nothing more!
+
+![Code signing](https://waseemh.github.io/images/1_mcaP5GyRR0AM_in-ihlhUg.png)
+
 However, this validation alone does not verify the users' intent to sign the artifact or their intention to make particular assertions about it.
 
 ## More implicit, less explicit
