@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Securing the Software Supply Chain Integrity using "Farm-to-table" Cryptographic Guarantees"
+title: "Securing the Software Supply Chain Integrity using 'Farm-to-table' Cryptographic Guarantees"
 comments: false
 tags: supply chain security, in-toto, provenance
 permalink: securing-software-supply-chain-integrity-using-farm-to-table-cryptographic-guarantees
