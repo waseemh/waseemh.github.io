@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Zero Trust Software Supply Chain using 'Farm-to-table' Cryptographic Guarantees"
+title: "Securing the Software Supply Chain Integrity using "Farm-to-table" Cryptographic Guarantees"
 comments: false
 tags: supply chain security, in-toto, provenance
-permalink: zero-trust-software-supply-chain-farm-to-table-cryptographic-guarantees
+permalink: securing-software-supply-chain-integrity-using-farm-to-table-cryptographic-guarantees
 ---
 
 In the 1980s, the manufacturing industry underwent workflow changes, and the software industry later embraced these practices with the Agile and DevOps methodologies.  The Toyota Production Systems (TPS), for example, has majorly inspired Agile practices in software.
